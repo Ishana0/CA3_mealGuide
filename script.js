@@ -10,7 +10,7 @@ const mainContainer = document.getElementById("main-container")
 const recipeContainer = document.getElementById("recipe-container")
 
 
-// Fetch a random meal on page load
+// Fetching a random meal on page load
 function getData() {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
         .then((res) => res.json())
@@ -21,7 +21,7 @@ function getData() {
 }
 getData();
 
-// Fetch meals based on the search query
+// Fetching meals based on the search input
 function searchedData(recipeName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`)
         .then((res) => res.json())
@@ -33,8 +33,8 @@ function searchedData(recipeName) {
 
 function displaySearchedData(mealArray) {
     if (mealArray && mealArray.length > 0) {
-        mainContainer.style.display = "block"; 
-        recipeContainer.innerHTML = ""; 
+        mainContainer.style.display = "block";
+        recipeContainer.innerHTML = "";
         mealArray.forEach(meal => {
             const recipeCard = document.createElement("div");
             recipeCard.className = "recipe-card";
@@ -44,15 +44,15 @@ function displaySearchedData(mealArray) {
             `;
             recipeContainer.appendChild(recipeCard);
         });
-        document.body.style.overflow = "auto"; 
+        document.body.style.overflow = "auto";
     } else {
-        mainContainer.style.display = "none"; 
-        recipeContainer.innerHTML = ""; 
-        document.body.style.overflow = "hidden"; 
+        mainContainer.style.display = "none";
+        recipeContainer.innerHTML = "";
+        document.body.style.overflow = "hidden";
     }
 }
 
-// Display the random meal
+// Function displaying the random meal
 function displayRandomData(data) {
     console.log();
     let meal = data.meals[0];
@@ -64,7 +64,7 @@ function displayRandomData(data) {
     };
 }
 
-// Display modal with meal details
+// Function displaying modal with meal details
 function displayModal(meal) {
     context.innerHTML = "";
     for (let key in meal) {
@@ -76,12 +76,12 @@ function displayModal(meal) {
     }
 }
 
-// Close the modal
+// Function to close the modal
 cross.onclick = () => {
     modal.style.display = "none";
 }
 
-// Search button functionality
+// Search button 
 searchButton.onclick = () => {
     if (searchBar.value.trim() !== "") {
         searchedData(searchBar.value.trim());
@@ -90,6 +90,5 @@ searchButton.onclick = () => {
     }
 }
 
-// Initial page load: hide mainContainer and disable scrolling
 mainContainer.style.display = "none";
 document.body.style.overflow = "hidden";
