@@ -53,15 +53,6 @@ h1 {
 }
 
 #search {
-    /* position: relative;
-    height: 45px;
-    width: 800px;
-    margin-left: 530px;
-    bottom: 180px;
-    border: orange 3px solid;
-    font-size: larger;
-    color: black;
-    padding-left: 10px; */
     height: 45px;
     width: 70%;
     border: orange 3px solid;
@@ -71,10 +62,6 @@ h1 {
 }
 
 #search-btn {
-    /* width: 45px;
-    position: relative;
-    bottom: 165px;
-    cursor: pointer; */
     width: 45px;
     height: 45px;
     margin-left: 10px;
@@ -153,12 +140,8 @@ h1 {
     display: none;
     background-color: white;
     width: 100%;
-    /* margin-bottom: 600px; */
-    margin-bottom: 20px;
+    margin-bottom: 600px;
     display: flex;
-    /* flex-wrap: wrap;
-    justify-content: space-evenly;
-    text-align: center; */
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -185,7 +168,7 @@ h1 {
     width: calc(20% - 20px);
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* transition: transform 0.3s; */
+    transition: transform 0.3s;
 }
 
 .recipe-card img {
@@ -205,7 +188,7 @@ h1 {
 }
 
 
-/* Mobile responsive styles */
+/* Responsive styles */
 @media (max-width: 768px) {
     #search-container {
         width: 100%;
@@ -214,17 +197,11 @@ h1 {
     }
 
     #search {
-        /* width: 100%;
-        margin-left: 0;
-        bottom: 0;
-        margin-bottom: 20px; */
         width: 80%;
         margin-bottom: 10px;
     }
 
     #search-btn {
-        /* bottom: 0;
-        margin-top: 10px; */
         width: 45px;
         height: 45px;
     }
