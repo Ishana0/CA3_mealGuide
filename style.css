@@ -42,8 +42,18 @@ h1 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#search {
+#search-container {
     position: relative;
+    width: 800px;
+    margin: 0 auto;
+    bottom: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    /* position: relative;
     height: 45px;
     width: 800px;
     margin-left: 530px;
@@ -51,13 +61,23 @@ h1 {
     border: orange 3px solid;
     font-size: larger;
     color: black;
+    padding-left: 10px; */
+    height: 45px;
+    width: 70%;
+    border: orange 3px solid;
+    font-size: larger;
+    color: black;
     padding-left: 10px;
 }
 
 #search-btn {
-    width: 45px;
+    /* width: 45px;
     position: relative;
     bottom: 165px;
+    cursor: pointer; */
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
     cursor: pointer;
 }
 
@@ -77,6 +97,7 @@ h1 {
     color: orange;
     font-size: xx-large;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #modal {
@@ -132,10 +153,14 @@ h1 {
     display: none;
     background-color: white;
     width: 100%;
-    margin-bottom: 600px;
+    /* margin-bottom: 600px; */
+    margin-bottom: 20px;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap;
     justify-content: space-evenly;
+    text-align: center; */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
@@ -149,6 +174,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .recipe-card {
@@ -159,7 +185,7 @@ h1 {
     width: calc(20% - 20px);
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    /* transition: transform 0.3s; */
 }
 
 .recipe-card img {
@@ -181,16 +207,26 @@ h1 {
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
-    #search {
+    #search-container {
         width: 100%;
+        flex-direction: column;
+        bottom: 0;
+    }
+
+    #search {
+        /* width: 100%;
         margin-left: 0;
         bottom: 0;
-        margin-bottom: 20px;
+        margin-bottom: 20px; */
+        width: 80%;
+        margin-bottom: 10px;
     }
 
     #search-btn {
-        bottom: 0;
-        margin-top: 10px;
+        /* bottom: 0;
+        margin-top: 10px; */
+        width: 45px;
+        height: 45px;
     }
 
     #image {
@@ -208,7 +244,7 @@ h1 {
     }
 
     .recipe-card {
-        flex-basis: calc(50% - 20px); /* Two items per row on smaller screens */
+        flex-basis: calc(50% - 20px);
     }
 
     #container {
@@ -219,7 +255,7 @@ h1 {
 
 @media (max-width: 480px) {
     .recipe-card {
-        flex-basis: calc(100% - 20px); /* One item per row on the smallest screens */
+        flex-basis: calc(100% - 20px);
     }
 
     #search {
